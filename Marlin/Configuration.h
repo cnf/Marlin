@@ -1127,7 +1127,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-#define MULTIPLE_PROBING 2
+// #define MULTIPLE_PROBING 2 // Does a BLTouch really need multiple probing?
 //#define EXTRA_PROBING    1
 
 /**
@@ -1439,7 +1439,7 @@
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #define EXTRAPOLATE_BEYOND_GRID
 
     //
     // Experimental Subdivision of the grid by Catmull-Rom method.
@@ -1539,8 +1539,9 @@
 #if ENABLED(Z_SAFE_HOMING)
   // #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
   // #define Z_SAFE_HOMING_Y_POINT ((Y_BED_SIZE) / 2)    // Y point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_X_POINT 50
-  #define Z_SAFE_HOMING_Y_POINT 50
+  // So we can also home on smaller build plates (ikea 300 x 300 mirror)
+  #define Z_SAFE_HOMING_X_POINT 70
+  #define Z_SAFE_HOMING_Y_POINT 70
 #endif
 
 // Homing speeds (mm/m)
