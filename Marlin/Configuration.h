@@ -118,7 +118,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Frank Rosquin, SK-Go 350 PINDA)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Frank Rosquin, SK-Go 350 BLTouch)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -133,13 +133,13 @@
  */
 
 // Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
-#define SHOW_BOOTSCREEN
+// #define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
 #define SHOW_CUSTOM_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
-//#define CUSTOM_STATUS_SCREEN_IMAGE
+#define CUSTOM_STATUS_SCREEN_IMAGE
 
 // @section machine
 
@@ -183,7 +183,7 @@
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
-//#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define MACHINE_UUID "1a2ba1ef-204f-4222-91eb-017c45f22bed"
 
 // @section extruder
 
@@ -535,9 +535,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
 // SK-Go
-  #define DEFAULT_Kp 15.99
-  #define DEFAULT_Ki 1.02
-  #define DEFAULT_Kd 62.42
+  #define DEFAULT_Kp 13.99
+  #define DEFAULT_Ki 0.99
+  #define DEFAULT_Kd 49.29
 
   // Ultimaker
   // #define DEFAULT_Kp 22.2
@@ -1321,7 +1321,7 @@
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_INVERTING true // Set to true to invert the logic of the sensor.
+  #define FIL_RUNOUT_INVERTING false // Set to true to invert the logic of the sensor.
   #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
 
