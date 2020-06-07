@@ -1474,7 +1474,7 @@
   //#define BABYSTEP_WITHOUT_HOMING
   //#define BABYSTEP_XY                     // Also enable X/Y Babystepping. Not supported on DELTA!
   #define BABYSTEP_INVERT_Z false           // Change if Z babysteps should go the other way
-  #define BABYSTEP_MULTIPLICATOR_Z  1       // Babysteps are very small. Increase for faster motion.
+  #define BABYSTEP_MULTIPLICATOR_Z  10       // Babysteps are very small. Increase for faster motion.
   #define BABYSTEP_MULTIPLICATOR_XY 1
 
   #define DOUBLECLICK_FOR_Z_BABYSTEPPING  // Double-click on the Status Screen for Z Babystepping.
@@ -1493,7 +1493,7 @@
   #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
   #if ENABLED(BABYSTEP_ZPROBE_OFFSET)
     //#define BABYSTEP_HOTEND_Z_OFFSET      // For multiple hotends, babystep relative Z offsets
-    //#define BABYSTEP_ZPROBE_GFX_OVERLAY   // Enable graphical overlay on Z-offset editor
+    #define BABYSTEP_ZPROBE_GFX_OVERLAY   // Enable graphical overlay on Z-offset editor
   #endif
 #endif
 
@@ -2253,7 +2253,7 @@
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
   #define STEALTHCHOP_XY
-  #define STEALTHCHOP_Z
+  // #define STEALTHCHOP_Z
   // #define STEALTHCHOP_E // on by default, off on SK
 
   /**
@@ -2301,7 +2301,7 @@
   #define HYBRID_THRESHOLD
 
   #if (SK_DRIVER == 2209)
-  #define X_HYBRID_THRESHOLD     60
+  #define X_HYBRID_THRESHOLD     100
   #else
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #endif
@@ -2309,7 +2309,7 @@
   // #define Y_HYBRID_THRESHOLD     100
 
   #if (SK_DRIVER == 2209)
-  #define Y_HYBRID_THRESHOLD     60
+  #define Y_HYBRID_THRESHOLD     100
   #else
   #define Y_HYBRID_THRESHOLD     100  // [mm/s]
   #endif
